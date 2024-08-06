@@ -2,6 +2,8 @@
 import mlflow
 import mlflow.sklearn
 import joblib
+import docker
+import flake8
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -27,7 +29,7 @@ def eval_metrics(actual, pred):
     return accuracy, precision, recall, f1
 
 # Local MLFLOW server
-mlflow.set_tracking_uri("http://localhost:5000")
+#mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("MLOPS_ASSIGNMENT")
 
 # Start MLflow
@@ -83,9 +85,22 @@ mlflow.sklearn.log_model(svc, "svm_model", input_example=X_test[:1])
 mlflow.end_run()
 
 # Saving models locally
-joblib.dump(log_reg, '../models/LR_model.joblib')
-joblib.dump(rf, '../models/RF_model.joblib')
-joblib.dump(svc, '../models/SVM_model.joblib')
+model_path1 = "log_reg.joblib"
+model_path2 = "rf.joblib"
+model_path3 = "svc.joblib"
+
+joblib.dump(log_reg,model_path1)
+joblib.dump(rf, model_path2)
+joblib.dump(svc,model_path3)
+
+#mlflow.log_artifact(model_path1)
+#mlflow.log_artifact(model_path2)
+#mlflow.log_artifact(model_path3)
+
+
+# joblib.dump(log_reg, '../models/LR_model.joblib')
+# joblib.dump(rf, '../models/RF_model.joblib')
+# joblib.dump(svc, '../models/SVM_model.joblib')
 
 # Printing metrics for reference
 print(f"Logistic Regression metrics:\n Accuracy: {log_reg_accuracy}\n Precision: {log_reg_precision}\n Recall: {log_reg_recall}\n F1 Score: {log_reg_f1}")
