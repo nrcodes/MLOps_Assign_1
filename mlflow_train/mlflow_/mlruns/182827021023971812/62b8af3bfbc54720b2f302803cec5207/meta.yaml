@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/182827021023971812/62b8af3bfbc54720b2f302803cec5207/artifacts
+end_time: 1722826865401
+entry_point_name: ''
+experiment_id: '182827021023971812'
+lifecycle_stage: active
+run_id: 62b8af3bfbc54720b2f302803cec5207
+run_name: rogue-colt-228
+run_uuid: 62b8af3bfbc54720b2f302803cec5207
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722826637404
+status: 3
+tags: []
+user_id: praveen
