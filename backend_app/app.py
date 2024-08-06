@@ -17,7 +17,7 @@ class InputData(BaseModel):
 directoryPath = "models"
 
 svmModel = "SVM_model.pkl"
-lrModel = "LR_model.joblib"
+lrModel = "LR_model.pkl"
 rfModel = "RF_model.pkl"
 
 svmPath = os.path.join(directoryPath, svmModel)
@@ -30,6 +30,8 @@ try:
         random_forest = pickle.load(f)
     with open(svmPath, "rb") as f:
         svm = pickle.load(f)
+    with open(lrPath, "rb") as f:
+        logistic_regression = pickle.load(f)
 except Exception as e:
     print(f"Error loading models: {e}")
     logistic_regression, random_forest, svm = None, None, None
