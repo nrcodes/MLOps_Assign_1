@@ -2,7 +2,7 @@ import os
 import pickle
 import traceback
 from typing import List
-
+import joblib
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
