@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, dev]
+    branches: [dev-arun]
   pull_request:
-    branches: [main, dev]
+    branches: [dev-arun]
 
 jobs:
   lint:
