@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/521182340420790087/9377c92733ff48f7bd62f35956b8749c/artifacts
+end_time: 1722826625289
+entry_point_name: ''
+experiment_id: '521182340420790087'
+lifecycle_stage: active
+run_id: 9377c92733ff48f7bd62f35956b8749c
+run_name: adaptable-sloth-610
+run_uuid: 9377c92733ff48f7bd62f35956b8749c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722826620517
+status: 3
+tags: []
+user_id: praveen
