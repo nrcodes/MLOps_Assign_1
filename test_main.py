@@ -17,11 +17,11 @@ class TestModels(unittest.TestCase):
             14.97, 24.64, 96.05, 677.9, 0.1426, 0.2378, 0.2671, 0.1015, 0.3014, 0.0875
         ]).reshape(1, -1)
         
-        with open("../models/LR_model.pkl", "rb") as lr:
+        with open("models/LR_model.pkl", "rb") as lr:
             cls.logistic_regression = pickle.load(lr)
-        with open("../models/RF_model.pkl", "rb") as rf:
+        with open("models/RF_model.pkl", "rb") as rf:
             cls.random_forest = pickle.load(rf)
-        with open("../models/SVM_model.pkl", "rb") as s_v_m:
+        with open("models/SVM_model.pkl", "rb") as s_v_m:
             cls.svm = pickle.load(s_v_m)
 
     def get_prediction_message(self, prediction):
