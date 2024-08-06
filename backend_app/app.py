@@ -2,7 +2,7 @@ import os
 import pickle
 import traceback
 from typing import List
-
+import joblib
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -26,6 +26,8 @@ rfPath = os.path.join(directoryPath, rfModel)
 
 # Load models
 try:
+    with open(lrPath, 'rb') as f:
+        logistic_regression = joblib.load(f)
     with open(rfPath, "rb") as f:
         random_forest = pickle.load(f)
     with open(svmPath, "rb") as f:
@@ -39,6 +41,9 @@ except Exception as e:
 
 mapping_dict = {0: "malignant", 1: "benign"}
 
+@app.get('/')
+def reed_root():
+    return {'message': 'Breast Cancer API'}
 
 @app.post("/predict/lr")
 async def predict_model1(input_data: InputData):
